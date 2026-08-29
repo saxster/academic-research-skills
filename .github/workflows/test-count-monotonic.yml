@@ -14,9 +14,8 @@ name: Test Count Monotonic
 # (e.g., "removing dead suite X — N tests retired intentionally").
 
 on:
-  pull_request:
+  push:
     branches: [main]
-
 concurrency:
   group: test-count-${{ github.event.pull_request.number }}-${{ github.event_name }}
   cancel-in-progress: true
