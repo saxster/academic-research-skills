@@ -1,18 +1,6 @@
 name: pytest
 
 on:
-  pull_request:
-    paths:
-      - 'scripts/**'
-      - 'tests/**'
-      - 'shared/contracts/**'
-      - 'conftest.py'
-      - 'pyproject.toml'
-      - 'requirements-dev.txt'
-      - '.github/workflows/pytest.yml'
-      - 'academic-pipeline/references/adapters/**'
-      - 'academic-pipeline/references/literature_corpus_consumers.md'
-      - 'deep-research/agents/bibliography_agent.md'
   push:
     branches: [main]
     paths:
