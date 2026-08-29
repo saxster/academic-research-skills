@@ -15,9 +15,8 @@ name: Harness Retirement (Monthly)
 # `/harness-retirement` and paste results into.
 
 on:
-  schedule:
-    # 06:00 UTC on the 1st = 14:00 Asia/Taipei
-    - cron: '0 6 1 * *'
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
