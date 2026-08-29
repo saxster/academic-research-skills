@@ -16,10 +16,8 @@ name: PR Closes-Issue Check
 # Override: include [skip-closes-check] in PR body with justification.
 
 on:
-  pull_request:
-    types: [opened, edited, synchronize, reopened, ready_for_review]
+  push:
     branches: [main]
-
 concurrency:
   group: pr-closes-issue-${{ github.event.pull_request.number }}-${{ github.event_name }}
   cancel-in-progress: true
