@@ -1,9 +1,6 @@
 name: PRISMA-trAIce Freshness
 
 on:
-  schedule:
-    # Monday 09:00 UTC (17:00 Taipei) — weekly upstream drift check
-    - cron: "0 9 * * 1"
   push:
     paths:
       - "shared/prisma_trAIce_protocol.md"
