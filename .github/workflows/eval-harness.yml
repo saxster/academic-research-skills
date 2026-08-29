@@ -5,34 +5,6 @@ name: Eval Harness
 # comment with the run metrics and blocks on un-acknowledged regressions.
 
 on:
-  pull_request:
-    paths:
-      # Delta 3 path filter — resolver clients + verification surfaces -> citation_extraction
-      - "scripts/verification_gate/**"
-      - "scripts/arxiv_client.py"
-      - "scripts/verification_cache.py"
-      - "scripts/crossref_client.py"
-      - "scripts/openalex_client.py"
-      - "scripts/citation_verification_summary.py"
-      - "scripts/claim_audit_*.py"
-      # epistemic-status surfaces -> status_classification + summarization_adequacy (Phase 2)
-      - "scripts/epistemic_status_extractor.py"
-      - "scripts/check_silent_upgrade.py"
-      - "shared/references/epistemic_status_vocabulary.md"
-      # writer prompts governing prose register -> status_classification + summarization_adequacy
-      - "deep-research/agents/synthesis_agent.md"
-      - "academic-paper/agents/draft_writer_agent.md"
-      - "deep-research/agents/report_compiler_agent.md"
-      # rq_framing_patterns scoring runner -> the harness dispatches to it, so
-      # changes there must re-run the eval harness (else RQ scoring can drift
-      # without the gate noticing).
-      - "scripts/check_rq_framing_patterns.py"
-      # the harness itself + gold sets
-      - "evals/gold/**"
-      - "scripts/run_evals.py"
-      - "scripts/check_ranking_lift.py"
-      - "shared/evals_lift_report.schema.json"
-      - ".github/workflows/eval-harness.yml"
   push:
     branches: [main]
     paths:
